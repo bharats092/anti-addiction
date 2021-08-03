@@ -6,19 +6,20 @@ $pwd=$data['pwd'];
 $sql = "SELECT email, pwd,role FROM user where email='".$email."'";
 $result = $mysqli -> query($sql);
 $row = $result -> fetch_array(MYSQLI_ASSOC);
-$res=array();
-if(count($row)>0){
-    $res=array("code"=>400,"msg"=>"User with same email already exists");
-}else{
-    $sql = "INSERT INTO `user`(`email`, `pwd`) VALUES ('".$email."','".$pwd."')";
-    $result = $mysqli -> query($sql);
-    $id=$mysqli ->insert_id;
-    if($id){
-        $res=array("code"=>200,"msg"=>"Signed up successfully","data"=>$id);
-    }else{
-        $res=array("code"=>400,"msg"=>"Something went wrong");
-    }
-}
+print_r($row);
+// $res=array();
+// if(count($row)>0){
+//     $res=array("code"=>400,"msg"=>"User with same email already exists");
+// }else{
+//     $sql = "INSERT INTO `user`(`email`, `pwd`) VALUES ('".$email."','".$pwd."')";
+//     $result = $mysqli -> query($sql);
+//     $id=$mysqli ->insert_id;
+//     if($id){
+//         $res=array("code"=>200,"msg"=>"Signed up successfully","data"=>$id);
+//     }else{
+//         $res=array("code"=>400,"msg"=>"Something went wrong");
+//     }
+// }
 
-echo json_encode($res); 
+// echo json_encode($res); 
 ?>
