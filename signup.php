@@ -11,7 +11,7 @@ $pwd=$data['pwd'];
 //     $res=array("code"=>400,"msg"=>"User with same email already exists");
 // }else{
     $sql1 = "INSERT INTO `user`(`email`, `pwd`) VALUES ('".$email."','".$pwd."')";
-    $result = $mysqli -> query($sql1);
+    $mysqli -> query($sql1);
     //$id=$mysqli ->insert_id;
     $res=array("code"=>200,"msg"=>"Signed up successfully");
    
