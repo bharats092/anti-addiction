@@ -5,7 +5,7 @@ $email=$data['email'];
 $pwd=$data['pwd'];
 $id=$data['id'];
 
-    $sql = "UPDATE `user` SET email='".$email."',pwd='".$pwd."' where id='".$id."'";
+    $sql = "UPDATE `user` SET email='".$email."',pwd='".$pwd."' where id=".$id;
     $result = $mysqli -> query($sql);
     
     if($result){
